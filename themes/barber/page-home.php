@@ -3,7 +3,6 @@
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
 
-
         <?php
 
 
@@ -17,5 +16,7 @@
         endwhile;
         ?>
     </div>
+
+    <?php include('static-page.php') ?>
 </div>
 <?php get_footer(); ?>

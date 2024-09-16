@@ -15,7 +15,7 @@
 
 <body <?php body_class(); ?>>
     <!-- ? Preloader Start -->
-    <!-- <div id="preloader-active">
+    <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
@@ -24,9 +24,25 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Preloader Start -->
 
     <!-- Header Section Begin -->
     <?php get_template_part('parts/content', 'navbar'); ?>
     <!-- Header End -->
+
+
+
+
+
+<?php
+if (!is_front_page()) :
+        $args = $_SERVER['REQUEST_URI'];
+        $args = ltrim($args, '/'); 
+        $args = rtrim($args, '/'); 
+        $args = ucfirst($args);
+        get_template_part( 'parts/content', 'breadcrumb' , $args);
+        ?>
+
+<?php endif;?>
+    
